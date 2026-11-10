@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+runs/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+.pytest_cache/
+.walkthroughs/

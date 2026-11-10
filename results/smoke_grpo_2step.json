@@ -1,0 +1,46 @@
+{
+  "method": "grpo",
+  "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "lora": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": "all-linear",
+    "task_type": "CAUSAL_LM"
+  },
+  "args": {
+    "steps": 2,
+    "prompts_per_step": 2,
+    "generations": 6,
+    "max_completion": 256,
+    "out": "/private/tmp/claude-502/-Users-braylo-Desktop/4fd4dd5b-238a-46a0-83b5-5c2de55f17dd/scratchpad/grpo_smoke.json"
+  },
+  "train_prompts": 4,
+  "num_tokens": 7722.0,
+  "compute": {
+    "n_params": 357898112,
+    "fwd_tokens": 15444,
+    "lora_train_tokens": 7722,
+    "flops": 22109513766912.0,
+    "pflops": 0.022109513766912,
+    "wall_seconds_this_mac": 147.8,
+    "usd_assumed_gpu": 0.0001228306320384,
+    "notes": [
+      "GRPO FLOPs = num_tokens x (2N generate + 2N logprob + 4N LoRA fwd/bwd); attention FLOPs ignored"
+    ]
+  },
+  "curve": [
+    {
+      "step": 1,
+      "reward": 0.3333333432674408,
+      "correct": 0.3333333432674408,
+      "completion_len": 217.0833282470703
+    },
+    {
+      "step": 2,
+      "reward": 0.34166666865348816,
+      "correct": 0.3333333432674408,
+      "completion_len": 232.4166717529297
+    }
+  ]
+}
